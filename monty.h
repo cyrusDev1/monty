@@ -58,6 +58,7 @@ typedef struct global_c
 global, global_c;
 
 void monty(stack_t **stack, char *str, unsigned int line);
+
 void push(stack_t **stack, unsigned int line);
 void pail(stack_t **stack, unsigned int line);
 
