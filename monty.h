@@ -5,6 +5,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
+#define OPCODES {\
+{"push", push},\
+{"pail", pail},\
+{NULL, NULL}}
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -14,11 +20,12 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+    int n;
+    struct stack_s *prev;
+    struct stack_s *next;
 } stack_t;
 
 /**
@@ -31,22 +38,29 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+    char *opcode;
+    void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
-* struct help - argument for the current opcode
-* @data_struct: stack mode, stack (default) and queue
-* @argument: the arguments of the string
+* struct global_c - argument for the current opcode
+* @mode: stack mode, stack (default) and queue
+* @arg: the arguments of the string
 *
 * Description: global structure used to pass data around the functions easily
 */
 
-typedef struct global
+typedef struct global_c
 {
     int mode;
     char *arg;
-} global;
+} global_c;
+global, global_c;
+
+void monty(stack_t **stack, char *str, unsigned int line);
+void push(stack_t **stack, unsigned int line);
+void pail(stack_t **stack, unsigned int line);
+
+int is_digit(char *string);
 
 #endif

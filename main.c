@@ -41,7 +41,7 @@ int main(int argc, char **argv)
             continue;
         }
         global.arg = strtok(NULL, " \t\n");
-        //monty(&stack, str, line);
+        monty(&stack, str, line);
         line++;
     }
     free(buffer);
