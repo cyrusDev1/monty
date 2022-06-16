@@ -18,6 +18,7 @@
 {"add", add},\
 {"nop", nop},\
 {"sub", sub},\
+{"div", div},\
 {NULL, NULL}}
 
 /**
