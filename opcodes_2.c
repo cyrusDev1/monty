@@ -33,3 +33,25 @@ void nop(stack_t **stack, unsigned int line)
     (void)stack;
     (void)line;
 }
+
+/**
+ * sub - subtracts the top element of the stack from
+ * the second top element of the stack.
+ * @stack: stack 
+ * @line: line number
+ * Return: no return
+ */
+
+void sub(stack_t **stack, unsigned int line)
+{
+    int result = 0;
+
+    if (*stack == NULL || (*stack)->next == NULL)
+    {
+        fprintf(stderr, "L%d: can't add, stack too short\n", line);
+        exit(EXIT_FAILURE);
+    }
+    result = (*stack)->next->n - (*stack)->n;
+    pop(stack, line);
+    (*stack)->n = result;
+}

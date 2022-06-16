@@ -17,6 +17,7 @@
 {"swap", swap},\
 {"add", add},\
 {"nop", nop},\
+{"sub", sub},\
 {NULL, NULL}}
 
 /**
@@ -74,8 +75,7 @@ void pop(stack_t **stack, unsigned int line);
 void swap(stack_t **stack, unsigned int line);
 void add(stack_t **stack, unsigned int line);
 void nop(stack_t **stack, unsigned int line);
-
-
+void sub(stack_t **stack, unsigned int line);
 
 int is_digit(char *string);
 
