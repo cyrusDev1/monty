@@ -63,14 +63,12 @@ void pchar(stack_t **stack, unsigned int line)
 void pstr(stack_t **stack, unsigned int line)
 {
     stack_t *curr = *stack;
-    (void)line;
-    if (*stack == NULL)
-        printf("\n");
 
-    while (curr != NULL && curr->n != 0 && isascii(curr->n))
+    (void)line;
+    while (curr && isascii(curr->n) && curr->n != 0)
     {
-        printf("%c", curr->n);
+        putchar(curr->n);
         curr = curr->next;
     }
-    printf("\n");
+    putchar('\n');
 }
