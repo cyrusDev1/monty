@@ -20,3 +20,17 @@ void add(stack_t **stack, unsigned int line)
     pop(stack, line);
     (*stack)->n = result;
 }
+
+/**
+ * nop - doesn't do anything
+ * @stack: stack 
+ * @line: line number
+ * Return: no return
+ */
+
+
+void nop(stack_t **stack, unsigned int line)
+{
+    (void)stack;
+    (void)line;
+}
