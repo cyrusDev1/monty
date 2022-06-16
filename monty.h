@@ -1,14 +1,17 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define  _GNU_SOURCE
+
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 #define OPCODES {\
 {"push", push},\
-{"pail", pail},\
+{"pall", pall},\
 {NULL, NULL}}
 
 /**
@@ -55,13 +58,18 @@ typedef struct global_c
     int mode;
     char *arg;
 } global_c;
-global, global_c;
+global_c global;
 
 void monty(stack_t **stack, char *str, unsigned int line);
 
 void push(stack_t **stack, unsigned int line);
-void pail(stack_t **stack, unsigned int line);
+void pall(stack_t **stack, unsigned int line);
 
 int is_digit(char *string);
+
+stack_t *add_node_front(stack_t **stack, const int n);
+stack_t *add_node_queue(stack_t **stack, const int n);
+size_t print_stack(const stack_t *stack);
+void free_stack(stack_t *stack);
 
 #endif

@@ -29,6 +29,7 @@ void monty(stack_t **stack, char *str, unsigned int line)
             monty_funcs[i].f(stack, line);
             return;
         }
+        i++;
     }
     fprintf(stderr, "L%d: unknown instruction %s\n", line, str);
     exit(EXIT_FAILURE);
