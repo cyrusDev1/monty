@@ -62,14 +62,15 @@ void pchar(stack_t **stack, unsigned int line)
 
 void pstr(stack_t **stack, unsigned int line)
 {
+    stack_t *curr = *stack;
     (void)line;
     if (*stack == NULL)
         printf("\n");
 
-    while (*stack != NULL && (*stack)->n != 0 && isascii((*stack)->n))
+    while (curr != NULL && curr->n != 0 && isascii(curr->n))
     {
-        printf("%c", (*stack)->n);
-        *stack = (*stack)->next;
+        printf("%c", curr->n);
+        curr = curr->next;
     }
     printf("\n");
 }
