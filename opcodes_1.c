@@ -31,7 +31,7 @@ void push(stack_t **stack, unsigned int line)
 
 
 /**
- * pail - print the stack
+ * pall - print the stack
  * @stack: stack given by function main
  * @line: line number
  * Return: no return
@@ -60,4 +60,31 @@ void pint(stack_t **stack, unsigned int line)
     }
     printf("%d\n", (*stack)->n);
 }
+
+/**
+ * pop -  removes the top element of the stack
+ * @stack: stack given by function main
+ * @line: line number
+ * Return: no return
+ */
+
+
+void pop(stack_t **stack, unsigned int line)
+{
+    stack_t *tmp = NULL;
+
+    if (*stack == NULL)
+    {
+        fprintf(stderr, "L%d: can't pop an empty stack\n", line);
+        exit(EXIT_FAILURE);
+    }
+
+    tmp = (*stack)->next;
+    free(*stack);
+    *stack = tmp;
+    if (*stack == NULL)
+        return;
+    (*stack)->prev = NULL;
+}
+
 
