@@ -24,6 +24,7 @@
 {"pchar", pchar},\
 {"pstr", pstr},\
 {"rotl", rotl},\
+{"rotr", rotr},\
 {NULL, NULL}}
 
 /**
@@ -88,7 +89,7 @@ void mod(stack_t **stack, unsigned int line);
 void pchar(stack_t **stack, unsigned int line);
 void pstr(stack_t **stack, unsigned int line);
 void rotl(stack_t **stack, unsigned int line);
-
+void rotr(stack_t **stack, unsigned int line);
 
 
 int is_digit(char *string);

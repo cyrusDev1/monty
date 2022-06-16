@@ -98,3 +98,34 @@ void rotl(stack_t **stack, unsigned int line)
     (*stack)->prev->next = NULL;
     (*stack)->prev = NULL;
 }
+
+/**
+ * rotr - prints the string starting at the top of the stack
+ * followed by a new line.
+ * @stack: stack
+ * @line: line number
+ * Return: no return
+ */
+
+void rotr(stack_t **stack, unsigned int line)
+{
+    stack_t *btm;
+    stack_t *prev;
+
+    (void)line;
+    if (*stack == NULL || (*stack)->next)
+    {
+        return;
+    }
+    btm = *stack;
+    while (btm->next)
+    {
+        btm = btm->next;
+    }
+    prev = btm->prev;
+    btm->next = *stack;
+    btm->prev = NULL;
+    prev->next = NULL;
+    (*stack)->prev = btm;
+    *stack = btm;
+}
