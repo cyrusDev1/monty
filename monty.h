@@ -19,6 +19,7 @@
 {"nop", nop},\
 {"sub", sub},\
 {"div", _div},\
+{"mul", mul},\
 {NULL, NULL}}
 
 /**
@@ -78,6 +79,7 @@ void add(stack_t **stack, unsigned int line);
 void nop(stack_t **stack, unsigned int line);
 void sub(stack_t **stack, unsigned int line);
 void _div(stack_t **stack, unsigned int line);
+void mul(stack_t **stack, unsigned int line);
 
 int is_digit(char *string);
 
