@@ -117,15 +117,14 @@ void rotr(stack_t **stack, unsigned int line)
     {
         return;
     }
-    btm = *stack;
+    prev = (*stack)->next;
     while (btm->next)
     {
         btm = btm->next;
     }
-    prev = btm->prev;
-    btm->next = *stack;
-    btm->prev = NULL;
+    prev->next->prev = *stack;
+    (*stack)->next = prev->next;
+    btm->next = prev;
     prev->next = NULL;
-    (*stack)->prev = btm;
-    *stack = btm;
+    prev->prev = btm;
 }
