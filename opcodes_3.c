@@ -53,7 +53,7 @@ void pchar(stack_t **stack, unsigned int line)
 }
 
 /**
- * pstr -  prints the string starting at the top of the stack
+ * pstr - prints the string starting at the top of the stack
  * followed by a new line.
  * @stack: stack
  * @line: line number
@@ -71,4 +71,30 @@ void pstr(stack_t **stack, unsigned int line)
         curr = curr->next;
     }
     putchar('\n');
+}
+
+/**
+ * rotl - rotates the stack to the top.
+ * @stack: stack
+ * @line: line number
+ * Return: no return
+ */
+
+void rotl(stack_t **stack, unsigned int line)
+{
+    stack_t *left, *right;
+
+    (void)line;
+    if (*stack == NULL || (*stack)->next == NULL)
+    {
+        return;
+    }
+    left = right = *stack;
+    while (right->next != NULL)
+        right = right->next;
+    right->next = left;
+    left->prev = right;
+    *stack = left->next;
+    (*stack)->prev->next = NULL;
+    (*stack)->prev = NULL;
 }

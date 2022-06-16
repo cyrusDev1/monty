@@ -2,7 +2,7 @@
 
 /**
  * add - adds the top two elements of the stack.
- * @stack: stack 
+ * @stack: stack
  * @line: line number
  * Return: no return
  */
@@ -23,7 +23,7 @@ void add(stack_t **stack, unsigned int line)
 
 /**
  * nop - doesn't do anything
- * @stack: stack 
+ * @stack: stack
  * @line: line number
  * Return: no return
  */
@@ -37,7 +37,7 @@ void nop(stack_t **stack, unsigned int line)
 /**
  * sub - subtracts the top element of the stack from
  * the second top element of the stack.
- * @stack: stack 
+ * @stack: stack
  * @line: line number
  * Return: no return
  */
@@ -59,7 +59,7 @@ void sub(stack_t **stack, unsigned int line)
 /**
  * _div - divides the second top element of the stack
  * by the top element of the stack.
- * @stack: stack 
+ * @stack: stack
  * @line: line number
  * Return: no return
  */
@@ -87,7 +87,7 @@ void _div(stack_t **stack, unsigned int line)
 /**
  * mul - multiplies the second top element of
  * the stack with the top element of the stack.
- * @stack: stack 
+ * @stack: stack
  * @line: line number
  * Return: no return
  */
