@@ -57,14 +57,14 @@ void sub(stack_t **stack, unsigned int line)
 }
 
 /**
- * div - divides the second top element of the stack
+ * _div - divides the second top element of the stack
  * by the top element of the stack.
  * @stack: stack 
  * @line: line number
  * Return: no return
  */
 
-void div(stack_t **stack, unsigned int line)
+void _div(stack_t **stack, unsigned int line)
 {
     int result = 0;
 
