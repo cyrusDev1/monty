@@ -28,7 +28,6 @@ void add(stack_t **stack, unsigned int line)
  * Return: no return
  */
 
-
 void nop(stack_t **stack, unsigned int line)
 {
     (void)stack;
