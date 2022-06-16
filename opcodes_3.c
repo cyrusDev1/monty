@@ -3,7 +3,7 @@
 /**
  * mod - computes the rest of the division of the second top element
  * of the stack by the top element of the stack.
- * @stack: stack 
+ * @stack: stack
  * @line: line number
  * Return: no return
  */
@@ -32,7 +32,7 @@ void mod(stack_t **stack, unsigned int line)
 /**
  * pchar - prints the char at the top of the stack
  * followed by a new line.
- * @stack: stack 
+ * @stack: stack
  * @line: line number
  * Return: no return
  */
@@ -50,4 +50,26 @@ void pchar(stack_t **stack, unsigned int line)
         exit(EXIT_FAILURE);
     }
     printf("%c\n", (*stack)->n);
+}
+
+/**
+ * pstr -  prints the string starting at the top of the stack
+ * followed by a new line.
+ * @stack: stack
+ * @line: line number
+ * Return: no return
+ */
+
+void pstr(stack_t **stack, unsigned int line)
+{
+    (void)line;
+    if (*stack == NULL)
+        printf("\n");
+
+    while (*stack != NULL && (*stack)->n != 0 && isascii((*stack)->n))
+    {
+        printf("%c", (*stack)->n);
+        *stack = (*stack)->next;
+    }
+    printf("\n");
 }
