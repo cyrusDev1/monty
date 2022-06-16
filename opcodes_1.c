@@ -43,3 +43,21 @@ void pall(stack_t **stack, unsigned int line)
     print_stack(*stack);
 }
 
+/**
+ * pint - prints the value at the top of the stack
+ * followed by a new line
+ * @stack: stack given by function main
+ * @line: line number
+ * Return: no return
+ */
+
+void pint(stack_t **stack, unsigned int line)
+{
+    if (*stack == NULL)
+    {
+        fprintf(stderr, "L%d: can't pint, stack empty", line);
+        exit(EXIT_FAILURE);
+    }
+    printf("%d\n", (*stack)->n);
+}
+

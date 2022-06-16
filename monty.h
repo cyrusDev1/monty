@@ -12,6 +12,7 @@
 #define OPCODES {\
 {"push", push},\
 {"pall", pall},\
+{"pint", pint},\
 {NULL, NULL}}
 
 /**
@@ -64,6 +65,8 @@ void monty(stack_t **stack, char *str, unsigned int line);
 
 void push(stack_t **stack, unsigned int line);
 void pall(stack_t **stack, unsigned int line);
+void pint(stack_t **stack, unsigned int line);
+
 
 int is_digit(char *string);
 
