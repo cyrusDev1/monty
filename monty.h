@@ -2,6 +2,8 @@
 #define MONTY_H
 
 #define  _GNU_SOURCE
+#define STACK 0
+#define QUEUE 1
 
 #include <stddef.h>
 #include <stdlib.h>

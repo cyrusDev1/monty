@@ -13,13 +13,13 @@ void monty(stack_t **stack, char *str, unsigned int line)
     instruction_t monty_funcs[] = OPCODES;
     int i = 0;
 
-    if (!strcmp(str, "stack"))
+    if (strcmp(str, "stack") == 0)
     {
-        global.mode = 1;
+        global.mode = STACK;
         return; 
-    }else if (!strcmp(str, "queue"))
+    }else if (strcmp(str, "queue") == 0)
     {
-        global.mode = 0;
+        global.mode = QUEUE;
         return; 
     }
     while (monty_funcs[i].opcode)

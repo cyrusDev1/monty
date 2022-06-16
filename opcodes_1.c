@@ -17,18 +17,17 @@ void push(stack_t **stack, unsigned int line)
         exit(EXIT_FAILURE);
     }
 
-    if (global.mode == 0)
+    if (global.mode == STACK)
     {
         if (add_node_front(stack, atoi(n)) == NULL)
             exit(EXIT_FAILURE);
     }
-    else if (global.mode == 1)
+    else if (global.mode == QUEUE)
     {
         if (add_node_queue(stack, atoi(n)) == NULL)
             exit(EXIT_FAILURE);
     }
 }
-
 
 /**
  * pall - print the stack
@@ -68,7 +67,6 @@ void pint(stack_t **stack, unsigned int line)
  * Return: no return
  */
 
-
 void pop(stack_t **stack, unsigned int line)
 {
     stack_t *tmp = NULL;
@@ -94,7 +92,6 @@ void pop(stack_t **stack, unsigned int line)
  * Return: no return
  */
 
-
 void swap(stack_t **stack, unsigned int line)
 {
     stack_t *tmp = NULL;
@@ -112,4 +109,4 @@ void swap(stack_t **stack, unsigned int line)
 
     tmp->n = tmp->next->n;
     tmp->next->n = tmp_arg;
- }
+}
