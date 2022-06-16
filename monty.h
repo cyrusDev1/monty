@@ -21,6 +21,7 @@
 {"div", _div},\
 {"mul", mul},\
 {"mod", mod},\
+{"pchar", pchar},\
 {NULL, NULL}}
 
 /**
@@ -82,6 +83,7 @@ void sub(stack_t **stack, unsigned int line);
 void _div(stack_t **stack, unsigned int line);
 void mul(stack_t **stack, unsigned int line);
 void mod(stack_t **stack, unsigned int line);
+void pchar(stack_t **stack, unsigned int line);
 
 
 int is_digit(char *string);

@@ -28,3 +28,26 @@ void mod(stack_t **stack, unsigned int line)
     pop(stack, line);
     (*stack)->n = result;
 }
+
+/**
+ * pchar - prints the char at the top of the stack
+ * followed by a new line.
+ * @stack: stack 
+ * @line: line number
+ * Return: no return
+ */
+
+void pchar(stack_t **stack, unsigned int line)
+{
+    if (*stack == NULL)
+    {
+        fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
+        exit(EXIT_FAILURE);
+    }
+    if (!((*stack)->n > 0 && (*stack)->n < 127))
+    {
+        fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+        exit(EXIT_FAILURE);
+    }
+    printf("%c\n", (*stack)->n);
+}
